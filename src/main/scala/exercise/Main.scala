@@ -6,15 +6,15 @@ import CountingOut._
 object Main extends App {
   if (args.length != 2) kill("Missing exactly 2 arguments!")
 
-  // Make sure that arguments are ints
   val result = for {
     n <- convertToInt(args(0))
     k <- convertToInt(args(1))
-  } yield (n, k)
+    res <- findSurvivor(n, k)
+  } yield res
 
   result match {
-    case Right((n, k)) => println(s"Survivor for $n people in the circle with skip rate $k = ${findSurvivor(n, k)}")
-    case Left(_)       => kill("Invalid argument types. Please pass integers")
+    case Right(lastManStanding) => println(s"Survivor is $lastManStanding")
+    case Left(e)       => kill(e)
   }
 
   /**

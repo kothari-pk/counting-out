@@ -13,5 +13,6 @@ class MathUtilsTest extends FlatSpec with Matchers {
   it should "return left for invalid integer string" in {
     val result = convertToInt("hello")
     result.isLeft shouldBe true
+    result.left.get shouldBe """For input string: "hello""""
   }
 }
