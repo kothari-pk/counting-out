@@ -28,7 +28,7 @@ object Main extends App {
     Console.err.println(s"Application died with error: $msg")
     if (showUsage) {
       Console.err.println("""
-          |Usage: sbt "run n k"
+          | Usage: sbt "run n k"
           | Where:
           | n - circle size
           | k - step rate
