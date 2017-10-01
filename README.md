@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/kothari-pk/counting-out.svg?branch=master)]
-[![codecov](https://codecov.io/gh/kothari-pk/counting-out/branch/master/graph/badge.svg)]
+[![Build Status](https://travis-ci.org/kothari-pk/counting-out.svg?branch=master)](https://travis-ci.org/kothari-pk/counting-out) [![codecov](https://codecov.io/gh/kothari-pk/counting-out/branch/master/graph/badge.svg)](https://codecov.io/gh/kothari-pk/counting-out)
 
 ##Running
 
