@@ -6,9 +6,9 @@ import CountingOut._
 class CountingOutTest extends FlatSpec with Matchers {
 
   "findSurvivor" should "return the correct survivor when n > 1 and k > 1" in {
-    val result = findSurvivor(5, 2)
+    val result = findSurvivor(5, 3)
     result.isRight shouldBe true
-    result.right.get shouldBe 3
+    result.right.get shouldBe 4
   }
 
   it should "return the correct survivor when n and k are equal" in {

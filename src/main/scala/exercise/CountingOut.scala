@@ -19,6 +19,9 @@ object CountingOut {
     else if (n == 1) {
       Right(1)
     }
+    else if(k == 2) {
+      Right(getSafePosition(n))
+    }
     else {
       @tailrec
       def t(remaining: Int, result: Int = 1): Int =
@@ -26,5 +29,11 @@ object CountingOut {
 
       Right(t(n))
     }
+  }
+
+  // Special solution when k = 2
+  def getSafePosition(n: Int): Int = {
+    val valueOfL = n - Integer.highestOneBit(n)
+    2 * valueOfL + 1
   }
 }
