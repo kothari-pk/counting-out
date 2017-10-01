@@ -1,14 +1,14 @@
 package exercise
 
 import scala.annotation.tailrec
-import utils.MathUtils._
+import utils.Helpers._
 
 object CountingOut {
 
-  def findSurvivor(args: Array[String]): Either[String, Int] =
+  def findSurvivor(args: Array[String]): Either[Error, Int] =
     for {
-      n <- convertToInt(args(0))
-      k <- convertToInt(args(1))
+      n <- args(0).convertToInt
+      k <- args(1).convertToInt
       lastManStanding <- findSurvivor(n, k)
     } yield lastManStanding
 
@@ -16,9 +16,9 @@ object CountingOut {
    * tail recursive solution
    * @param n number of people in the circle
    * @param k skip
-   * @return surviour's location
+   * @return survivor's location
    */
-  def findSurvivor(n: Int, k: Int): Either[String, Int] = {
+  def findSurvivor(n: Int, k: Int): Either[Error, Int] = {
     if (n < 1) {
       Left("group size (n) must be greater than or equal to 1")
     } else if (k < 1) {
