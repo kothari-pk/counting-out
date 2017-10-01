@@ -1,20 +1,13 @@
 package exercise
 
-import utils.MathUtils._
 import CountingOut._
 
 object Main extends App {
   if (args.length != 2) kill("Missing exactly 2 arguments!")
 
-  val result = for {
-    n <- convertToInt(args(0))
-    k <- convertToInt(args(1))
-    res <- findSurvivor(n, k)
-  } yield res
-
-  result match {
+  findSurvivor(args) match {
     case Right(lastManStanding) => println(s"Survivor is $lastManStanding")
-    case Left(e)       => kill(e)
+    case Left(e)                => kill(e)
   }
 
   /**
